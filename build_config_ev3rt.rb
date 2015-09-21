@@ -5,7 +5,7 @@
 # User Configuration
 #
 
-EV3RT_PATH = "/Users/xxx/ev3rt-b4-r2/hrp2"
+EV3RT_PATH ?= "/Users/xxx/ev3rt-b4-r2/hrp2"
 
 GNU_TOOL_PREFX = "arm-none-eabi-"
 
