@@ -3,7 +3,6 @@ language: c
 compiler: gcc
 
 env:
-  - MRUBY_CONFIG=../build_config_ev3rt.rb
 
 addons:
   apt:
@@ -31,7 +30,7 @@ before_script:
 
 script:
   - cd mruby
-  - ./minirake all
+  - MRUBY_CONFIG=../build_config_ev3rt.rb EV3RT_PATH=../ev3rt-beta5-1-release/hrp2 ./minirake all
   - cd ../ev3rt-beta5-1-release/hrp2
 
 cache: apt
