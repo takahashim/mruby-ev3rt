@@ -19,7 +19,6 @@ before_install:
   - unzip ev3rt-beta5-1-release.zip
   - cd ev3rt-beta5-1-release && tar xfj hrp2.tar.xz
 
-
 install:
   - export PATH=$PATH:$PWD/gcc-arm-none-eabi-4_9-2015q2/bin
 
