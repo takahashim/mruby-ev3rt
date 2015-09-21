@@ -1,0 +1,35 @@
+sudo: false
+language: c
+compiler: gcc
+
+env:
+  - MRUBY_CONFIG=build_config_ev3rt.rb
+
+addons:
+  apt:
+    packages:
+      - build-essential
+      - git
+      - libc6-i386
+      - zlib1g-dev
+
+before_install:
+  - curl --retry 10 --retry-max-time 120 -L "https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q2-update/+download/gcc-arm-none-eabi-4_9-2015q2-20150609-linux.tar.bz2" | tar xfj -
+  - curl --retry 10 --retry-max-time 120 -L "http://www.toppers.jp/download.cgi/ev3rt-beta5-1-release.zip"
+  - unzip ev3rt-beta5-1-release.zip
+  - cd ev3rt-beta5-1-release && tar xfj hrp2.tar.xz
+
+
+install:
+  - export PATH=$PATH:$PWD/gcc-arm-none-eabi-4_9-2015q2/bin
+
+before_script:
+  - arm-none-eabi-gcc --version
+  - git clone --depth 1 "https://github.com/mruby/mruby.git"
+
+script:
+  - cd mruby
+  - ./minirake all
+  - cd ../ev3rt-beta5-1-release/hrp2
+
+cache: apt
