@@ -30,7 +30,9 @@ before_script:
 
 script:
   - cd mruby
-  - env MRUBY_CONFIG=../build_config_ev3rt.rb EV3RT_PATH=../ev3rt-beta5-1-release/hrp2 ./minirake all
+  - export MRUBY_CONFIG=../build_config_ev3rt.rb
+  - export EV3RT_PATH=../ev3rt-beta5-1-release/hrp2
+  - ./minirake all
   - cd ../ev3rt-beta5-1-release/hrp2
 
 cache: apt
