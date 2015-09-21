@@ -23,9 +23,9 @@ before_install:
 
 install:
   - export PATH=$PATH:$PWD/gcc-arm-none-eabi-4_9-2015q2/bin
+  - arm-none-eabi-gcc --version
 
 before_script:
-  - arm-none-eabi-gcc --version
   - git clone --depth 1 "https://github.com/mruby/mruby.git"
 
 script:
