@@ -3,7 +3,7 @@ language: c
 compiler: gcc
 
 env:
-  - MRUBY_CONFIG=build_config_ev3rt.rb
+  - MRUBY_CONFIG=../build_config_ev3rt.rb
 
 addons:
   apt:
