@@ -15,7 +15,7 @@ addons:
 
 before_install:
   - curl --retry 10 --retry-max-time 120 -L "https://launchpad.net/gcc-arm-embedded/4.9/4.9-2015-q2-update/+download/gcc-arm-none-eabi-4_9-2015q2-20150609-linux.tar.bz2" | tar xfj -
-  - curl --retry 10 --retry-max-time 120 -L "http://www.toppers.jp/download.cgi/ev3rt-beta5-1-release.zip"
+  - wget "http://www.toppers.jp/download.cgi/ev3rt-beta5-1-release.zip"
   - unzip ev3rt-beta5-1-release.zip
   - cd ev3rt-beta5-1-release && tar xfj hrp2.tar.xz
 
